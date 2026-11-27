@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Talko MEA8000 user manual</title><style>body{font:17px/1.65 system-ui,sans-serif;color:#222;max-width:1000px;margin:48px auto;padding:0 24px}h1,h2,h3{line-height:1.25}h2{margin-top:2.4em}h3{margin-top:1.7em}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border:1px solid #ccc;text-align:left;vertical-align:top;padding:10px}th{background:#f4f4f4}figure{margin:24px 0;overflow-x:auto}a{color:#1658a0}@media print{body{font-size:11pt;margin:0;max-width:none}h2,h3{break-after:avoid}tr{break-inside:avoid}}</style><body><h1>Talko MEA8000 user manual</h1>
+<p>Talko MEA8000 brings the character of the Philips MEA8000 speech synthesizer to Talko 2. Play French and English speech, explore Emy syllables, and turn the Formant bank into a live vowel synthesizer.</p>
+
+<p><strong>Version 1.0.</strong> These instructions cover the Talko MEA8000 firmware for Talko 2 (RP2040), with fourteen banks, 258 speech selections, and a continuous Formant synth.</p>
+
+<h2>Play your first word</h2>
+
+<ol>
+
+<li>Connect Talko’s audio output to your mixer or modular system.</li>
+
+<li>Select <strong>bank 0</strong> with the encoder. Turn <strong>SOUND</strong> fully counterclockwise to select <strong>BONJOUR</strong>.</li>
+
+<li>Put <strong>MODE</strong> in the left position. Start with <strong>SPEED</strong> and <strong>PITCH</strong> near noon, and <strong>FX</strong> fully counterclockwise.</li>
+
+<li>Press <strong>SPEAK</strong>, or trigger <strong>GATE IN</strong>. Turn SOUND to choose another entry. SPEED and PITCH remain live while the word plays.</li>
+
+</ol>
+
+<h2>Use the encoder and display</h2>
+
+<figure><table><thead><tr><th scope="col">Decimal point</th><th scope="col">Page</th><th scope="col">What to do</th></tr></thead><tbody><tr><td>Off</td><td>Banks</td><td>Turn the encoder to select banks 0 to 9, then C, E, b and n. Turn SOUND to select an entry.</td></tr><tr><td>Steady</td><td>Effects</td><td>Tap the encoder to enter FX. Turn it to select an effect, then turn the FX knob clockwise to hear it. Tap again to return to banks; the effect stays selected.</td></tr></tbody></table></figure>
+
+<p>The encoder stops at both ends of the bank and FX lists. At power on, Talko starts in bank 0 with FX off.</p>
+
+<h2>MODE switch: gate response</h2>
+
+<figure><table><thead><tr><th scope="col">Switch position</th><th scope="col">Speech banks 0 to 8, C, E, b and n</th><th scope="col">Formant bank 9</th></tr></thead><tbody><tr><td>Left</td><td>A trigger plays the selected entry to its end. A new trigger received while it is playing is ignored.</td><td>A trigger plays a half-second synth note, followed by a short release.</td></tr><tr><td>Middle</td><td>Hold SPEAK or maintain an incoming gate to play the entry. Releasing the button or gate cuts it. It ends naturally if the entry finishes first.</td><td>Sustain while SPEAK or the incoming gate is held, then release smoothly.</td></tr><tr><td>Right</td><td>Repeat the selected entry while SPEAK or the incoming gate is held. Release to stop.</td><td>One trigger starts a drone. The next trigger releases it.</td></tr></tbody></table></figure>
+
+<p>On bank 9, changing MODE or selecting another bank stops the active synth note or drone. Each MODE change shows a reminder for 550 ms: S/G/r for speech, or 1/G/d for synth, before returning to the bank/FX display.</p>
+
+<h2>Use the panel controls</h2>
+
+<figure><table><thead><tr><th scope="col">Control</th><th scope="col">Speech banks 0 to 8, C, E, b and n</th><th scope="col">Formant bank 9</th></tr></thead><tbody><tr><td>SOUND</td><td>Choose an entry within the bank.</td><td>Set the vowel centre: Oo, Oh, Ah, Eh, Ee.</td></tr><tr><td>SPEED</td><td>Turn from half speed at fully left to the original timing at noon and eight times normal speed at fully right.</td><td>Set automatic vowel motion: stopped fully left, then slow to fast clockwise.</td></tr><tr><td>PITCH</td><td>Change excitation pitch from about half to double. Near noon uses the stored starting pitch.</td><td>Play a continuous pitch from 55 to 880 Hz, about 220 Hz at noon.</td></tr><tr><td>FX</td><td>F/o/h: amount, dry fully left. b: downward bend left, neutral at noon, upward bend right.</td><td>The same effect control applies to the live synth.</td></tr></tbody></table></figure>
+
+<h2>Play the live Formant bank</h2>
+
+<ol>
+
+<li>Select <strong>bank 9</strong>, put MODE in the middle, and turn FX fully counterclockwise.</li>
+
+<li>Put SOUND and PITCH near noon. Hold SPEAK, or maintain a gate, to hear a sustained vowel.</li>
+
+<li>Sweep SOUND through <strong>Oo → Oh → Ah → Eh → Ee</strong>.</li>
+
+<li>Turn SPEED clockwise to add automatic movement around the SOUND position. Fully left holds a steady vowel.</li>
+
+<li>Hold ERROR to hold the vowel as a note. Turn PITCH to play it, or turn SPEED past noon to add flutter. Release ERROR to resume normal movement. Release SPEAK or the gate to release the note.</li>
+
+</ol>
+
+<p>SPEED sets a motion rate of about 0.15 to 12 cycles per second. The movement spans one vowel position either side of SOUND and reflects at the ends. SOUND itself follows a short fixed glide. Use right MODE for a latched drone and left MODE for short notes.</p>
+
+<h2>Use the ERROR button</h2><p>While ERROR is held, the current display glyph flickers with sharp brightness dips and brief blackouts. Release it to restore normal brightness. The bank/FX decimal-point meaning is preserved.</p>
+
+<p><strong>Speech banks:</strong> press ERROR during a word to sustain that instant as a note. Turn PITCH to play the note while holding ERROR. A captured consonant keeps some hiss. Set SPEED at noon or lower for a steady note, then turn it past noon to add flutter. FX stays live. In G/r modes the hold continues after SPEAK/GATE is released. Release ERROR to resume if the gate is held, or stop if it is off.</p>
+
+<p><strong>Formant bank 9:</strong> hold ERROR to sustain the current vowel and pause its bend. Turn PITCH to tune the note, adjust FX, or turn SPEED above noon for flutter. Releasing a gated synth note still works while ERROR is held.</p>
+
+<h2>Sound banks</h2>
+
+<p>The entries below follow the <strong>SOUND</strong> knob from fully counterclockwise to fully clockwise. Banks 0 to 8 contain 214 speech entries. Bank C adds 20 Citroën words for machines and controls. Bank E adds 20 electronics words. Banks b and n each contain two words. Bank 9 is generated continuously through the same MEA8000 engine.</p>
+
+<h3>Bank 0: French words (16)</h3>
+
+<p>BONJOUR, MERCI, OUI, BRAVO, ECOUTE, PARLER, MAINTENANT, ENCORE, SON, NOTE, MIDI, TEMPS, QUESTION, REPONSE, EXACTE, RECOMMENCE</p>
+
+<h3>Bank 1: French numbers (11)</h3>
+
+<p>ZERO, UN, DEUX, TROIS, QUATRE, CINQ, SIX, SEPT, HUIT, NEUF, DIX</p>
+
+<h3>Bank 2: French vowels (12)</h3>
+
+<p>a, e, i, oo, u, eh, ee, oh, A, I, O, W</p>
+
+<h3>Bank 3: Consonants (18)</h3>
+
+<p>b, d, f, g, j, k, l, m, n, p, R, r, s, t, v, z, ch, N</p>
+
+<h3>Bank 4: English numbers (11)</h3>
+
+<p>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</p>
+
+<h3>Bank 5: English radio alphabet (26)</h3>
+
+<p>ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT, GOLF, HOTEL, INDIA, JULIET, KILO, LIMA, MICHAEL, NOVEMBER, OSCAR, PAPA, QUEBEC, ROMEO, SIERRA, TANGO, UNIFORM, VICTOR, WHISKY, X-RAY, YANKEE, ZULU</p>
+
+<h3>Bank 6: English extras (20)</h3>
+
+<p>ELEVEN, TWELVE, HUNDRED, TELEPHONE, NUMBER, CODE, AND, THIRTEEN, FOURTEEN, FIFTEEN, SIXTEEN, SEVENTEEN, EIGHTEEN, NINETEEN, TWENTY, THIRTY, FORTY, FIFTY, TELEPHONE NUMBER, ONE HUNDRED</p>
+
+<h3>Bank 7: Emy syllables (76)</h3>
+
+<p>AIL, AN, BE, BL, BLE, BR, BRE, CE, CH, CL, CLE, CR, CT, DE, DR, DRE, EU, ET, AI, EIL, EUIL, FL, FLE, FR, FRE, GE, GL, GLE, GN, GNE, GR, GRE, IA, IÉ, IEN, IE, ILLE, IN, IO, ION, JE, LE, ME, NE, AU, OI, OIN, ON, OU, OUIL, PE, PL, PLE, PR, PRE, PS, PT, RE, SE, SIO, SP, ST, STR, STRE, TE, TION, TR, TRE, UI, VE, VR, VRE, XE, GZ, ZE, ZIO</p>
+
+<h3>Bank 8: French phrases and commands (24)</h3>
+
+<p>AU REVOIR, ATTENTION, S&#x27;IL VOUS PLAIT, VOICI, VOILA, DEBUT, ARRET, GAUCHE, DROITE, CHOIX, CHOISI, SELECTIONNEE, FAIS, DONNE, PRENDRE, QU EST CE, ADDITIONNE, AFFICHE, AJOUTE, DIMINUE, FREINE, LENTEMENT, RECULE, SYNTHESE</p>
+
+<h3>Bank 9: Live Formant synth</h3>
+
+<p>Continuous vowel synthesis: Oo → Oh → Ah → Eh → Ee. See the Formant-bank instructions above.</p>
+
+<h3>Bank C — Citroën</h3>
+
+<p>Turn the encoder one click above 9 to reach C. Turn SOUND clockwise for MOTEUR, MARCHE, ARRÊT, COMMANDE, TRANSMISSION, AUTOMATIQUE, TENSION, PRESSION, NIVEAU, MINIMUM, MESURE, TEST, TERMINÉ, SYSTÈME, PANNE, ALARME, CODE D'ACCÈS, INCORRECT, PAROLE, SYNTHÉTISEUR. Trigger adjacent words for TRANSMISSION AUTOMATIQUE, NIVEAU MINIMUM, TEST TERMINÉ or CODE D’ACCÈS INCORRECT. Hold ERROR during a word and turn PITCH to sustain it as a note.</p>
+
+<h3>Bank E — Électronique</h3>
+
+<p>Turn the encoder one click past C. The SOUND knob selects NUMÉRIQUE, VOLUME, HAUTEUR, PUISSANCE, ÉLECTRICITÉ, MONOCHROME, CASSETTE, DISQUETTE, INTERRUPTEUR, COMPTEUR, BLOCAGE, CLAVIER, CURSEUR, JOYSTICK, ÉCRAN, LECTEUR, MAGNÉTOPHONE, ANALYSE, PROFONDEUR, LUMIÈRE, in that order. VOLUME uses the electronics recording from BLOC 14. For a phrase, trigger ÉCRAN and then MONOCHROME.</p>
+
+<h3>Banks b and n — Binaire and Oui / Non</h3>
+
+<p>Turn one click past E for <strong>b</strong>. With SOUND on the left, trigger ZÉRO. With SOUND on the right, trigger UN. One more click selects <strong>n</strong>, with OUI on the left and NON on the right. The selection changes near noon.</p>
+
+<p>Bank 5 retains the historical radio alphabet from the source, including <strong>MICHAEL</strong> for M. Bank 6 combines the original extra words with number prefixes and suffixes, plus TELEPHONE NUMBER and ONE HUNDRED. These additions are assembled from MEA8000 frames. This version contains French and English material; it has no German vocabulary bank.</p>
+
+<h2>Effects</h2>
+
+<p>Tap the encoder to enter the FX page, select an effect, then turn the FX knob clockwise. The decimal point stays on while the FX page is selected. Formant, Ring and Whisper are dry fully counterclockwise. Bend is neutral around noon; turn left for down and right for up.</p>
+
+<figure><table><thead><tr><th scope="col">Display</th><th scope="col">Effect</th><th scope="col">What it does</th></tr></thead><tbody><tr><td>-</td><td>Off</td><td>Dry MEA8000 sound.</td></tr><tr><td>F</td><td>Formant</td><td>Raise the formant frequencies, up to about 1.75 times their original values.</td></tr><tr><td>o</td><td>Ring modulation</td><td>Blend in ring modulation as the carrier rises from about 30 to 1000 Hz.</td></tr><tr><td>b</td><td>Bend</td><td>Turn left for a downward pitch bend, leave near noon for the natural voice, or turn right for an upward bend. Full depth reaches one octave.</td></tr><tr><td>h</td><td>Whisper</td><td>Blend voiced excitation toward noise before the formant filters.</td></tr></tbody></table></figure>
+
+<p><strong>b is the combined down/up bend.</strong> Robot has been removed. There is no delay or reverb effect in this firmware.</p>
+
+<p>To hear the full bend, turn FX away from noon and trigger a fresh word or note. A sustained synth note settles at its final bend pitch. Return FX to noon for the natural voice.</p>
+
+<p>PITCH remains live. In bank 9, SPEED also influences the Bend attack time; with automatic vowel motion stopped, the bend takes about 250 ms. Effects can be changed during a note.</p>
+
+<h2>Read labels over USB serial</h2>
+
+<p>Connect a USB data cable and open Talko’s serial port at <strong>115200 baud</strong>. The device identifies itself as <strong>Talko 2 MEA8000 1.0</strong>. Talko sends the spoken label on its own line when the word starts. The last word stays visible in Console’s Words display after playback ends. Each repeat sends the label again. Mode and debug data are not printed normally; diagnostics require an explicit request or debug 1.</p>
+
+<p>The firmware provides serial diagnostics. It does not provide MIDI control or the playback-aligned phoneme mouth animation used by the S.A.M. firmware. Close a serial monitor before another application connects to the same port.</p>
+
+<h2>Install or switch firmware</h2>
+
+<p>Download <a href="https://github.com/deladriere/Talko_MEA8000/releases/download/v1.0/Talko_MEA8000-1.0.uf2">Talko_MEA8000-1.0.uf2</a> for <strong>Talko 2 (RP2040)</strong> and keep a copy of the standard firmware for switching back.</p>
+
+<ol>
+
+<li>Connect Talko using a USB data cable.</li>
+
+<li>Hold <strong>BOOTSEL</strong>, press and release <strong>RESET</strong>, then release BOOTSEL after a second or two.</li>
+
+<li>Copy the UF2 to the <strong>RPI-RP2</strong> drive. Leave USB connected until the copy finishes and Talko restarts.</li>
+
+<li>Check the spoken and displayed <strong>1 point 0</strong> version. To switch back, repeat these steps using the standard Talko 2 UF2.</li>
+
+</ol>
+
+<p>For board access and the standard firmware download, see the <a href="https://www.polaxis.be/talko-2-user-manual/">Talko 2 user manual</a>.</p>
+
+<h2>Startup and idle display</h2>
+
+<p>At startup, the front display shows <strong>1</strong>, the decimal point, then <strong>0</strong>. The voice says « un point zéro ». The rear LED flashes red once, then blue once.</p>
+
+<p>After five idle minutes, a moving display segment replaces the bank or FX page. Turn a knob or the encoder, press a panel button or send a gate to wake it. Active audio or a held ERROR button keeps the display awake.</p>
+
+<h2>Troubleshooting</h2>
+
+<figure><table><thead><tr><th scope="col">What you hear</th><th scope="col">What to check</th></tr></thead><tbody><tr><td>No obvious FX</td><td>Enter the FX page, select an effect and turn FX clockwise. F/o/h are dry fully left; b is neutral at noon.</td></tr><tr><td>b makes no change</td><td>Noon is neutral. Turn left or right and trigger a fresh word/note.</td></tr><tr><td>No vowel movement in bank 9</td><td>Put MODE in the middle, hold SPEAK, set SOUND near noon and turn SPEED clockwise. Fully left stops automatic motion.</td></tr><tr><td>ERROR makes little change on speech</td><td>Hold ERROR during a vowel and turn PITCH to hear it sing. Turn SPEED past noon to hear flutter.</td></tr><tr><td>The synth keeps sounding after a trigger</td><td>Right MODE is a latched drone. Trigger once more to release it, or select another bank.</td></tr></tbody></table></figure>
+
+<p><a href="https://www.polaxis.be/talko-alternative-firmwares/">Talko App Store</a> · <a href="https://github.com/deladriere/Talko_MEA8000">Talko MEA8000 source code</a></p>
+
+<h2>Source and attribution</h2>
+
+<p>The MEA8000 engine is adapted from <a href="https://github.com/mamedev/mame/blob/master/src/devices/sound/mea8000.cpp">Antoine Miné’s MEA8000 emulation in MAME</a>, released under BSD-3-Clause. The Talko adaptation adds RP2040 audio, panel controls, stored banks, live pitch/speed/formant controls and the Formant synth.</p>
+
+<p>The historical speech data come from the Arno Jacobs collection, Techni-Musique vocabulary, Polaxis Emy/Mea tables and the Citroën archive. See the <a href="../THIRD_PARTY_NOTICES.md">source credits and licensing notes</a>.</p>
+
+</body></html>
