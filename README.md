@@ -2,7 +2,7 @@
 
 Speech and live formant synthesis for the Polaxis Talko 2 (RP2040). The encoder selects 13 speech banks with 258 selections and a continuous vowel synthesizer on bank 9.
 
-[Download the 1.0 firmware for Talko 2](https://github.com/deladriere/Talko_MEA8000/releases/download/v1.0/Talko_MEA8000-1.0.uf2) · [Release files](https://github.com/deladriere/Talko_MEA8000/releases/tag/v1.0) · [Talko App Store](https://www.polaxis.be/talko-alternative-firmwares/)
+[Download the 1.0 firmware for Talko 2](https://github.com/deladriere/Talko_MEA8000/releases/download/v1.0/Talko_MEA8000-1.0.uf2) · [Release files](https://github.com/deladriere/Talko_MEA8000/releases/tag/v1.0) · [Talko App Store](https://www.polaxis.be/talko-alternative-firmwares/) · [User manual](https://www.polaxis.be/talko-mea8000-user-manual/)
 
 ## Install
 
